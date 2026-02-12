@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingreso</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body, html {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Foto de fondo distorsionada */
+        .foto-fondo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Asegúrate de que el archivo se llame exactamente así */
+            background: url('index.png') no-repeat center center/cover;
+            filter: blur(10px); 
+            transform: scale(1.1);
+            z-index: -1;
+        }
+
+        .barra-centro {
+            width: 90%;
+            max-width: 400px;
+        }
+
+        input {
+            width: 100%;
+            padding: 20px;
+            font-size: 1.5rem; /* Números más grandes */
+            text-align: center;
+            border: 3px solid #ffffff;
+            border-radius: 15px;
+            /* Fondo más sólido para que resalten los números */
+            background: rgba(255, 255, 255, 0.9); 
+            color: #333; /* Color oscuro para que los números se vean claro */
+            outline: none;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            letter-spacing: 5px; /* Espacio entre números */
+        }
+
+        input::placeholder {
+            color: #888;
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="foto-fondo"></div>
+
+    <div class="barra-centro">
+        <input type="text" 
+               id="dateInput" 
+               placeholder="INGRESA NUESTRA FECHA" 
+               maxlength="6" 
+               autocomplete="off">
+    </div>
+
+    <script>
+        const input = document.getElementById('dateInput');
+
+        input.addEventListener('input', () => {
+            // El script está limpio sin etiquetas de cita
+            if (input.value === "251019") {
+                window.location.href = "album.html";
+            }
+        });
+    </script>
+
+</body>
+</html>
